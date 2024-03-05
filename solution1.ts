@@ -68,18 +68,7 @@ const dictionary1 = [
 console.log(findWords(inputString1, dictionary1)); // Expected Output: ["ate", "eat", "tea"]
 // Case 2:
 const inputString2 = "oogd";
-const dictionary2 = [
-  "ate",
-  "eat",
-  "tea",
-  "dog",
-  "do",
-  "god",
-  "goo",
-  "go",
-  "good",
-];
-console.log(findWords(inputString2, dictionary2)); // Expected Output: ["dog", "do", "god", "goo", "go", "good"]
+console.log(findWords(inputString2, dictionary1)); // Expected Output: ["dog", "do", "god", "goo", "go", "good"]
 // Case 3:
 const inputString3 = "hello";
 const dictionary3 = ["world", "hello", "goodbye"];
