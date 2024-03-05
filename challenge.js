@@ -27,7 +27,8 @@ var findWords = function (inputString, dictionary) {
         // Iterate through each character in the word
         for (var char in wordCharFreq) {
             // If the character frequency of the word is greater than the input character frequency, return false
-            if (!inputCharFreq[char] || wordCharFreq[char] > inputCharFreq[char])
+            if (!inputCharFrequency[char] ||
+                wordCharFreq[char] > inputCharFrequency[char])
                 return false;
         }
         // If the word can be formed from the input character frequency object, return true
@@ -40,6 +41,8 @@ var findWords = function (inputString, dictionary) {
     // Return the valid words
     return validWords;
 };
+// Time Complexity: O(N * M), where N is the length of the input string and M is the length of the dictionary.
+// Space Complexity: O(N + M + K), where N is the length of the input string, M is the length of the dictionary, and K is the number of unique characters in the input string and dictionary.
 // Test Cases:
 // Case 1:
 var inputString1 = "ate";

@@ -31,7 +31,10 @@ const findWords = (inputString: string, dictionary: string[]): string[] => {
     // Iterate through each character in the word
     for (let char in wordCharFreq) {
       // If the character frequency of the word is greater than the input character frequency, return false
-      if (!inputCharFreq[char] || wordCharFreq[char] > inputCharFreq[char])
+      if (
+        !inputCharFrequency[char] ||
+        wordCharFreq[char] > inputCharFrequency[char]
+      )
         return false;
     }
     // If the word can be formed from the input character frequency object, return true
