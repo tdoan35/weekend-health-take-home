@@ -57,7 +57,7 @@ Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can v
 
 Comparing the Time and Space complexities for both approaches we can see that both approaches actually have similar worst-case Time efficiencies. The character count map approach actually has a better worst-case Space complexity. 
 
-Which approach would I use? As with most things in engineering, the answer I would have is *it depends*. 
+**Which approach would I use?** As with most things in engineering, the answer I would have is *it depends*. 
 
 For smaller matching or infrequent calls I would most likely use the character count map approach. An example use case I can come up with is either string matching for a backend API call or some form data manipulation using a custom form on the frontend could be another case for the simple character count map approach.
 
@@ -65,6 +65,6 @@ For larger expanded dictionaries or for high scale repeated calls, I would use t
 
 ### Conclusion ☕
 
-Thanks for reading, and the opportunity - I hope to have a chance to learn more about the company / the stack / the team and to see if our cultural values align well!
+Thanks for reading, and the opportunity. I'd love to hear feedback and constructive criticism as I am always hoping to learn and grow! I hope to have a chance to learn more about the company / the stack / the team and to see if our cultural values align well!
 
 
