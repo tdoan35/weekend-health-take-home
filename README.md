@@ -9,9 +9,10 @@ I installed the typescript compiler in order to verify the test cases.
    `git clone https://github.com/tdoan35/weekend-health-take-home.git`
 2. Install Typescript compiler using NPM packages (or your favorite package manager)<br/>
    `npm install`
-3. (Optional) Compile the .ts file into Javascript to be run on Node
+3. (Optional) Compile the .ts file into Javascript to be run on Node<br/>
    `npx tsc`
-4. Run the Node on the .js file to see the output in terminal!
+   Note: I have already compiled the .ts files into javascript so they can be ran this repo is cloned
+5. Run the Node on the .js file to see the output in terminal!<br/>
    `node solution1.js` || `node solution2.js`
 
 ## Solution 1
