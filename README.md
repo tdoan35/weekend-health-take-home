@@ -36,7 +36,7 @@ My approach to the problem at a high level was to:
 
 ## Solution 2 ❓️
 
-As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. I implemented the Trie solution in the `solution2.js` file. I implemented the trie data structure using the following approach:
+As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. I implemented the Trie solution in the `solution2.js` file. I implemented the trie data structure solution using the following approach:
 
 1. Define a Trie Node and Trie Class containing the following function prototypes: constructor, insert, findWords
 2. Construct the Trie using the input dictionary as the input
