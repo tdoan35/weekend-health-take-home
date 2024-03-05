@@ -1,7 +1,7 @@
 # Weekend Health Take-home Challenge
 Solution to Weekend Health Take-home Challenge
 
-## Installation
+## Installation 🔌
 
 I installed the typescript compiler in order to verify the test cases.
 
@@ -10,12 +10,12 @@ I installed the typescript compiler in order to verify the test cases.
 2. Install Typescript compiler using NPM packages (or your favorite package manager)<br/>
    `npm install`
 3. (Optional) Compile the .ts file into Javascript to be run on Node<br/>
-   `npx tsc`
-   Note: I have already compiled the .ts files into javascript so they can be ran this repo is cloned
+   `npx tsc`<br/>
+   *Note: I have already compiled the .ts files into javascript so they can be ran this repo is cloned*
 5. Run the Node on the .js file to see the output in terminal!<br/>
    `node solution1.js` || `node solution2.js`
 
-## Solution 1
+## Solution 1 ❓️
 
 I tried to be verbose in the `solution1.ts` file as asked in the challenge document, but here I can walk through the function at a high level. The ask was to implement a function named `findWords` that accepts two arguments: 1) an input string and 2) a dictionary and return an array of words from the dictionary that can be formed by rearranging some or all of the letters in the input string. 
 
@@ -34,7 +34,7 @@ My approach to the problem at a high level was to:
 
 <br/>
 
-## Solution 2
+## Solution 2 ❓️
 
 As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. I implemented the Trie solution in the `solution2.js` file. I implemented the trie data structure using the following approach:
 
@@ -53,7 +53,7 @@ Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can v
 
 <br/>
 
-## Notes
+## Notes 💼
 
 Comparing the Time and Space complexities for both approaches we can see that both approaches actually have similar worst-case Time efficiencies. The character count map approach actually has a better worst-case Space complexity. 
 
@@ -63,7 +63,7 @@ For smaller matching or infrequent calls I would most likely use the character c
 
 For larger expanded dictionaries or for high scale repeated calls, I would use the trie dictionary approach. If you were using the same dictionary and build up the trie, further calls with many words that shared common prefixes could benefit from the previous words that have already been inserted into the trie. This would be extremely useful if you were building like a typeahead search or typeahead autocompleter with preexisting data that you had. This could further be improved if you stored the trie in a redis cache. An example would be a name autocompleting typeahead search or form, this would be the approach I would select in order to ensure the user experience is fast and snappy when as they type into the typeahead.
 
-### Conclusion
+### Conclusion ☕
 
 Thanks for reading, and the opportunity - I hope to have a chance to learn more about the company / the stack / the team and to see if our cultural values align well!
 
