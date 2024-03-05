@@ -42,8 +42,9 @@ As I was writing out this documentation, I also thought of another approach to s
 2. Construct the Trie using the input dictionary as the input
 3. Find the valid words that can be formed from the input string
 
-Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can visualize the trie data structure below:
-![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/ada5ea9b-6d42-40c4-bc01-24c88badc278)
+Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can visualize the trie data structure below:<br/>
+
+![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/4b77a107-431c-457d-81a4-c29c076d0da4)
 
 <br/>
 
