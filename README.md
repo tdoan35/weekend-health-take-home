@@ -10,13 +10,13 @@ I installed the typescript compiler in order to verify the test cases.
 2. Install Typescript compiler using NPM packages (or your favorite package manager)<br/>
    `npm install`
 3. (Optional) Compile the .ts file into Javascript to be run on Node
-   `npx tsc ./challenge.ts`
+   `npx tsc`
 4. Run the Node on the .js file to see the output in terminal!
    `node challenge.js`
 
-## Solution Walkthrough
+## Solution 1 Walkthrough
 
-I tried to be verbose in the `challenge.ts` file as asked in the challenge document, but here I can walk through the function at a high level. The ask was to implement a function named `findWords` that accepts two arguments: 1) an input string and 2) a dictionary and return an array of words from the dictionary that can be formed by rearranging some or all of the letters in the input string. 
+I tried to be verbose in the `solution1.ts` file as asked in the challenge document, but here I can walk through the function at a high level. The ask was to implement a function named `findWords` that accepts two arguments: 1) an input string and 2) a dictionary and return an array of words from the dictionary that can be formed by rearranging some or all of the letters in the input string. 
 
 My approach to the problem at a high level was to: 
 1. Create a helper function to create a character frequency object for a given word
@@ -25,20 +25,37 @@ My approach to the problem at a high level was to:
 4. Filter the dictionary to only include words that can be formed from the input character frequency object
 5. Return the filterd dictionary
 
-Time Complexity: O(N * M), where N is the length of the input string and M is the length of the dictionary.
-Space Complexity: O(N + M + K), where N is the length of the input string, M is the length of the dictionary, and K is the number of unique characters in the input string and dictionary.
+**Time Complexity**: O(N * M), where N is the length of the input string and M is the length of the dictionary.
 
-### Notes
+**Space Complexity**: O(N + M + K), where N is the length of the input string, M is the length of the dictionary, and K is the number of unique characters in the input string and dictionary.
 
-As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. Thinking through this, I believe that the trie data structure could work using the following approach:
+### Solution 2 Walkthrough
+
+As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. I implemented the Trie solution in the `solution2.js` file. I implemented the trie data structure using the following approach:
 
 1. Define a Trie Node and Trie Class containing the following function prototypes: constructor, insert, findWords
 2. Construct the Trie using the input dictionary as the input
 3. Find the valid words that can be formed from the input string
 
-Imagining the input from test case 1, `dictionary = ["ate", "eat",...]`
-![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/0f8cc656-d335-4a2d-8883-93781df362e9)
+Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can visualize the trie data structure below:
+![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/ada5ea9b-6d42-40c4-bc01-24c88badc278)
 
-Time Complexity: O(N * M) for insert function, where N is the number of words in the dictionary and M is the average length of those words. This step is done once, and the trie can be reused.
-Space Complexity: O(N * M), assuming there is little prefix sharing as there could be N number of words in the dictionary, all with M number of different prefixes. 
+**Time Complexity**: `findWords` function is O(N * M), where N is the number of words in the dictionary and M is the average length of those words. This step is done once, and the trie can be reused. `insert` funciton is O(k) where k is the length of the input string
+
+**Space Complexity**: O(N * M), assuming there is little prefix sharing as there could be N number of words in the dictionary, all with M number of different prefixes. 
+
+### Notes
+
+Comparing the Time and Space complexities for both approaches we can see that both approaches actually have similar worst-case Time efficiencies. The character count map approach actually has a better worst-case Space complexity. 
+
+Which approach would I use? As with most things in engineering, the answer I would have is *it depends*. 
+
+For smaller matching or infrequent calls I would most likely use the character count map approach. An example use case I can come up with is either string matching for a backend API call or some form data manipulation using a custom form on the frontend could be another case for the simple character count map approach.
+
+For larger expanded dictionaries or for high scale repeated calls, I would use the trie dictionary approach. If you were using the same dictionary and build up the trie, further calls with many words that shared common prefixes could benefit from the previous words that have already been inserted into the trie. This would be extremely useful if you were building like a typeahead search or typeahead autocompleter with preexisting data that you had. This could further be improved if you stored the trie in a redis cache. An example would be a name autocompleting typeahead search or form, this would be the approach I would select in order to ensure the user experience is fast and snappy when as they type into the typeahead.
+
+### Conclusion
+
+Thanks for reading, and the opportunity - I hope to have a chance to learn more about the company / the stack / the team and to see if our cultural values align well!
+
 
