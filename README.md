@@ -12,9 +12,9 @@ I installed the typescript compiler in order to verify the test cases.
 3. (Optional) Compile the .ts file into Javascript to be run on Node
    `npx tsc`
 4. Run the Node on the .js file to see the output in terminal!
-   `node challenge.js`
+   `node solution1.js` || `node solution2.js`
 
-## Solution 1 Walkthrough
+## Solution 1
 
 I tried to be verbose in the `solution1.ts` file as asked in the challenge document, but here I can walk through the function at a high level. The ask was to implement a function named `findWords` that accepts two arguments: 1) an input string and 2) a dictionary and return an array of words from the dictionary that can be formed by rearranging some or all of the letters in the input string. 
 
@@ -23,13 +23,17 @@ My approach to the problem at a high level was to:
 2. Initialize a character frequency for the input string
 3. Create a helper function to check if a word can be formed from the input character frequency object
 4. Filter the dictionary to only include words that can be formed from the input character frequency object
-5. Return the filterd dictionary
+5. Return the filtered dictionary
+   
+<br/>
 
 **Time Complexity**: O(N * M), where N is the length of the input string and M is the length of the dictionary.
 
 **Space Complexity**: O(N + M + K), where N is the length of the input string, M is the length of the dictionary, and K is the number of unique characters in the input string and dictionary.
 
-### Solution 2 Walkthrough
+<br/>
+
+## Solution 2
 
 As I was writing out this documentation, I also thought of another approach to solving this problem using a Trie data structure. I implemented the Trie solution in the `solution2.js` file. I implemented the trie data structure using the following approach:
 
@@ -40,11 +44,15 @@ As I was writing out this documentation, I also thought of another approach to s
 Imagining the input from an example, `dictionary = ["ate", "eat", ear]` we can visualize the trie data structure below:
 ![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/ada5ea9b-6d42-40c4-bc01-24c88badc278)
 
+<br/>
+
 **Time Complexity**: `findWords` function is O(N * M), where N is the number of words in the dictionary and M is the average length of those words. This step is done once, and the trie can be reused. `insert` funciton is O(k) where k is the length of the input string
 
 **Space Complexity**: O(N * M), assuming there is little prefix sharing as there could be N number of words in the dictionary, all with M number of different prefixes. 
 
-### Notes
+<br/>
+
+## Notes
 
 Comparing the Time and Space complexities for both approaches we can see that both approaches actually have similar worst-case Time efficiencies. The character count map approach actually has a better worst-case Space complexity. 
 
