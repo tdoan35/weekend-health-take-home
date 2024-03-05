@@ -37,14 +37,8 @@ As I was writing out this documentation, I also thought of another approach to s
 3. Find the valid words that can be formed from the input string
 
 Imagining the input from test case 1, `dictionary = ["ate", "eat",...]`
-       root
-     /      \
-    a        e
-   /           \
-  t              a
- /                \
-e                   t 
+![image](https://github.com/tdoan35/weekend-health-take-home/assets/8644260/0f8cc656-d335-4a2d-8883-93781df362e9)
 
-Time Complexity: O(N * M), where N is the number of words in the dictionary and M is the average length of those words. This step is done once, and the trie can be reused.
+Time Complexity: O(N * M) for insert function, where N is the number of words in the dictionary and M is the average length of those words. This step is done once, and the trie can be reused.
 Space Complexity: O(N * M), assuming there is little prefix sharing as there could be N number of words in the dictionary, all with M number of different prefixes. 
 
