@@ -60,9 +60,9 @@ Comparing the Time and Space complexities for both approaches we can see that bo
 
 **Which approach would I use?** As with most things in engineering, the answer I would have is *it depends*. 
 
-For smaller matching or infrequent calls I would most likely use the character count map approach. An example use case I can come up with is either string matching for a backend API call or some form data manipulation using a custom form on the frontend could be another case for the simple character count map approach.
+- For smaller matching or infrequent calls I would most likely use the character count map approach. An example use case I can come up with is either string matching for a backend API call or some form data manipulation using a custom form on the frontend could be another case for the simple character count map approach.
 
-For larger expanded dictionaries or for high scale repeated calls, I would use the trie dictionary approach. If you were using the same dictionary and build up the trie, further calls with many words that shared common prefixes could benefit from the previous words that have already been inserted into the trie. This would be extremely useful if you were building like a typeahead search or typeahead autocompleter with preexisting data that you had. The response times could further be improved if you stored the trie in a redis cache. An example case would be a name autocompleting typeahead search or form, this would be the approach I would select in order to ensure the user experience is fast and snappy when as they type into the typeahead.
+- For larger expanded dictionaries or for high scale repeated calls, I would use the trie dictionary approach. If you were using the same dictionary and build up the trie, further calls with many words that shared common prefixes could benefit from the previous words that have already been inserted into the trie. This would be extremely useful if you were building like a typeahead search or typeahead autocompleter with preexisting data that you had. The response times could further be improved if you stored the trie in a redis cache. An example case would be a name autocompleting typeahead search or form, this would be the approach I would select in order to ensure the user experience is fast and snappy when as they type into the typeahead.
 
 ### Conclusion ☕
 
